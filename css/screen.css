@@ -473,13 +473,30 @@ label {
     Card with box shadow
 */
 .c-card {
-    background-color: white;
-    border-radius:3px;
-    border: 1px solid white;
-    /* box-shadow: 0 0 0 3px #123456; nog afwerken */
-    opacity: 5%;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid white;
+  box-shadow: 0 2 4 5px white;
 }
 
+.c-card__body {
+  padding: 24px 48px 24px 48px;
+}
+
+.c-card__title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  padding-top: 48px;
+}
+
+.c-card__footer {
+  text-align: center;
+  padding-top:24px;
+  border-top: 1px solid #E2E3E7;
+}
 /*
     Component: Forms
     ---
@@ -524,6 +541,16 @@ label {
 */
 
 .c-label {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 8px;
+  color: #606274 ;
+}
+.c-label--option {
+  font-size: 14px;
+  line-height: 16px;
+  color: #606274 ;
+  margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -551,7 +578,7 @@ label {
 }
 
 .c-button:hover {
-    border-color: #2955ff;
+  border-color: #2955ff;
 }
 
 .c-button:focus {
