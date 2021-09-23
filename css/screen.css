@@ -20,6 +20,27 @@
 \*------------------------------------*/
 
 :root {
+  --global-color-alpha-light: #4f95ff;
+  --global-color-alpha: #3385ff;
+  --global-color-alpha-dark: #2e77e6;
+
+  --global-color-alpha-light: #...;
+  --global-color-alpha: #...;
+  --global-color-alpha-dark: #...;
+  --global-color-transparent: #...;
+  --global-color-x-transparent: x...;
+
+  --global-color-neutral-xxxx-light: #...;
+  --global-color-neutral-xxx-light: #...; 
+  --global-color-neutral-xx-light: #...;
+  --global-color-neutral-x-light: #...;
+  --global-color-neutral-light: #...;
+  --global-color-neutral: #...;
+  --global-color-neutral-dark: #...;
+  --global-color-neutral-x-dark: #...;
+  --global-color-neutral-xx-dark: #...;
+  --global-color-neutral-xxx-dark: #...;
+  --global-color-neutral-xxxx-dark: #...;
 }
 
 /* CSS variables here */
@@ -170,18 +191,18 @@ hr {
 }
 
 a {
-  color: #3385ff;
+  color: var(--global-color-alpha);
   transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-  color: #9385ff;
+  color: var(--global-color-alpha);
 }
 
 a:hover,
 a:focus {
-  color: #9385ff;
+  color: var(--global-color-alpha-light);
 }
 input,
 label {
@@ -205,6 +226,9 @@ label {
 
 .o-row--login {
   /* stuff here to align the card */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 /* size modifiers */
@@ -482,6 +506,11 @@ label {
 .c-card__body {
   padding: 24px 48px 24px 48px;
 }
+@media (max-width: 576px) {
+  .c-card__body {
+    padding: 24px 24px 24px 24px;
+  }
+}
 
 .c-card__title {
   display: flex;
@@ -491,11 +520,15 @@ label {
   line-height: 21px;
   padding-top: 48px;
 }
-
+@media (max-width: 576px) {
+  .c-card__title {
+    padding-top: 24px;
+  }
+}
 .c-card__footer {
   text-align: center;
-  padding-top:24px;
-  border-top: 1px solid #E2E3E7;
+  padding-top: 24px;
+  border-top: 1px solid #e2e3e7;
 }
 /*
     Component: Forms
@@ -513,11 +546,10 @@ label {
 */
 
 .c-input {
-  /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; */
-  all: unset;
-  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* all: unset; */
   width: 100%;
   border-width: 1px;
   border-style: solid;
@@ -544,12 +576,12 @@ label {
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 8px;
-  color: #606274 ;
+  color: #606274;
 }
 .c-label--option {
   font-size: 14px;
   line-height: 16px;
-  color: #606274 ;
+  color: #606274;
   margin-left: 8px;
 }
 
@@ -611,6 +643,10 @@ label {
   color: Black;
 }
 
+.u-color-neutral-gray {
+  color: #757787;
+}
+
 /*
     Utilities: spacing
     ---
@@ -621,8 +657,13 @@ label {
   padding-top: 0 !important;
 }
 
-.u-mb-clear {
-  margin-bottom: 0 !important;
+.u-mt-xxs {
+  display: flex;
+  margin-top: -8px;
+}
+
+.u-mt-clear {
+  margin-top: 0 !important;
 }
 
 .u-mb-xs {
@@ -678,6 +719,7 @@ label {
 */
 
 .u-align-text-center {
+  display: block;
   text-align: center;
 }
 
@@ -692,6 +734,7 @@ label {
 
 .u-text-sm {
   font-size: 14px;
+  width: 400;
 }
 
 /*
